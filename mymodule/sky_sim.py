@@ -32,6 +32,7 @@ def make_stars(ra, dec, nsrc=NSRC):
     return ras, decs
 
 def clip_to_radius():
+    # Clip to radius function
 
 if __name__ == "__main__":
     central_ra, central_dec = get_radec()
