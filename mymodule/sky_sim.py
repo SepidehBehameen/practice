@@ -31,6 +31,7 @@ def make_stars(ra, dec, nsrc=NSRC):
         decs.append(dec + random.uniform(-1, 1))
     return ras, decs
 
+def clip_to_radius():
 
 if __name__ == "__main__":
     central_ra, central_dec = get_radec()
@@ -41,3 +42,5 @@ if __name__ == "__main__":
         for i in range(NSRC):
             print(f"{i:07d}, {ras[i]:12f}, {decs[i]:12f}", file=f)
     print("Wrote catalogue.csv")
+
+    
