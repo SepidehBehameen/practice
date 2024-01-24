@@ -54,10 +54,11 @@ def crop_to_circle(ras,decs, ref_ra, ref_dec, radius):
 def make_stars(ra, dec, nsrc=NSRC):
     ras = []
     decs = []
-    # applying the filter
     for _ in range(nsrc):
         ras.append(ra + random.uniform(-1, 1))
         decs.append(dec + random.uniform(-1, 1))   
+    # applying the filter
+    ras, decs = crop_to_circle(ras,decs)    
     return ras, decs
 
 
