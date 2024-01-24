@@ -11,8 +11,8 @@ NSRC = 1_000_000
 
 def get_radec():
     # from wikipedia
-    andromeda_ra = '-17:45:40.03599'   
-    andromeda_dec = '29:00:28.1699'
+    andromeda_ra = '00:42:44.3'
+    andromeda_dec = '41:16:9'
 
     degrees, minutes, seconds = andromeda_dec.split(':')
     dec = int(degrees)+int(minutes)/60+float(seconds)/3600
