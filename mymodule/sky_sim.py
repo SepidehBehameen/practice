@@ -23,6 +23,7 @@ def get_radec():
     return ra, dec
 
 
+
 def crop_to_circle(ras,decs, ref_ra, ref_dec, radius):
     """
     Crop an input list of positions so that they lie within radius of
@@ -51,6 +52,7 @@ def crop_to_circle(ras,decs, ref_ra, ref_dec, radius):
     return ra_out, dec_out
 
 
+
 def make_stars(ra, dec, nsrc=NSRC):
     ras = []
     decs = []
@@ -60,6 +62,7 @@ def make_stars(ra, dec, nsrc=NSRC):
     # applying the filter
     ras, decs = crop_to_circle(ras,decs)    
     return ras, decs
+
 
 
 if __name__ == "__main__":
