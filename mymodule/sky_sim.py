@@ -23,16 +23,22 @@ def get_radec():
     return ra, dec
 
 
+def clip_to_radius():
+    # Clip to radius function
+    # creating a filter here
+
+
 def make_stars(ra, dec, nsrc=NSRC):
     ras = []
     decs = []
     for _ in range(nsrc):
         ras.append(ra + random.uniform(-1, 1))
         decs.append(dec + random.uniform(-1, 1))
+
+    # applying the filter, from clip_to_raius function, here.
     return ras, decs
 
-def clip_to_radius():
-    # Clip to radius function
+
 
 if __name__ == "__main__":
     central_ra, central_dec = get_radec()
