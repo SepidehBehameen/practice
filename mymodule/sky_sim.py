@@ -23,11 +23,7 @@ def get_radec():
     return ra, dec
 
 
-<<<<<<< HEAD
-def clip_to_radius():
-    # Clip to radius function
-    # creating a filter here
-=======
+
 def crop_to_circle(ras,decs, ref_ra, ref_dec, radius):
     """
     Crop an input list of positions so that they lie within radius of
@@ -54,7 +50,6 @@ def crop_to_circle(ras,decs, ref_ra, ref_dec, radius):
         ra_out.append(ras[i])
         dec_out.append(decs[i])
     return ra_out, dec_out
->>>>>>> dev
 
 
 def make_stars(ra, dec, nsrc=NSRC):
@@ -62,20 +57,11 @@ def make_stars(ra, dec, nsrc=NSRC):
     decs = []
     for _ in range(nsrc):
         ras.append(ra + random.uniform(-1, 1))
-<<<<<<< HEAD
         decs.append(dec + random.uniform(-1, 1))
-
-    # applying the filter, from clip_to_raius function, here.
-    return ras, decs
-
-
-=======
-        decs.append(dec + random.uniform(-1, 1))   
     # applying the filter
     ras, decs = crop_to_circle(ras,decs)    
     return ras, decs
 
->>>>>>> dev
 
 if __name__ == "__main__":
     central_ra, central_dec = get_radec()
