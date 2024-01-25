@@ -23,9 +23,38 @@ def get_radec():
     return ra, dec
 
 
+<<<<<<< HEAD
 def clip_to_radius():
     # Clip to radius function
     # creating a filter here
+=======
+def crop_to_circle(ras,decs, ref_ra, ref_dec, radius):
+    """
+    Crop an input list of positions so that they lie within radius of
+    a reference position
+
+    Parameters
+    ----------
+    ras,decs : list(float)
+        The ra and dec in degrees of the data points
+    ref_ra, ref_dec: float
+        The reference location
+    radius: float
+        The radius in degrees
+    Returns
+    -------
+    ras, decs : list
+        A list of ra and dec coordinates that pass our filter.
+    """
+    ra_out = []
+    dec_out = []
+    for i in range(len(ras)):
+        dist_to_ref = sqrt((ra - ras[i])**2 + (dec - decs[i])**2)
+        if dist_to_ref < radius
+        ra_out.append(ras[i])
+        dec_out.append(decs[i])
+    return ra_out, dec_out
+>>>>>>> dev
 
 
 def make_stars(ra, dec, nsrc=NSRC):
@@ -33,16 +62,24 @@ def make_stars(ra, dec, nsrc=NSRC):
     decs = []
     for _ in range(nsrc):
         ras.append(ra + random.uniform(-1, 1))
+<<<<<<< HEAD
         decs.append(dec + random.uniform(-1, 1))
 
     # applying the filter, from clip_to_raius function, here.
     return ras, decs
 
 
+=======
+        decs.append(dec + random.uniform(-1, 1))   
+    # applying the filter
+    ras, decs = crop_to_circle(ras,decs)    
+    return ras, decs
+
+>>>>>>> dev
 
 if __name__ == "__main__":
     central_ra, central_dec = get_radec()
-    ras, decs = make_stars(central_ra, central_dec)
+    ras, decs = make_stars(ra,dec)     
     # now write these to a csv file for use by my other program
     with open('catalogue.csv', 'w', encoding='utf8') as f:
         print("id,ra,dec", file=f)
